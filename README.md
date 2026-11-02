@@ -13,7 +13,7 @@ Trang tổng hợp kết quả kiểm thử chất lượng hệ thống cho d�
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **Backend Service & API** | Spring Boot, JUnit 5, Mockito | **375** | **375** | 0 | ✅ 100% PASS |
 | **Frontend Unit & Component** | React, Vitest, Testing Library | **190** | **190** | 0 | ✅ 100% PASS |
-| **End-to-End (Toàn hệ thống)** | Playwright, Chromium, Real DB | **19** | **19** | 0 | ✅ 100% PASS |
+| **End-to-End (Toàn hệ thống)** | Playwright, Chromium, Real DB | **18** | **18** | 0 | ✅ 100% PASS |
 
 ---
 
