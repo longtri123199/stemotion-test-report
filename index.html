@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEMotion - Báo Cáo Kiểm Thử E2E & Hệ Thống (Review 2)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8">
+  <div class="max-w-6xl mx-auto space-y-8">
+    
+    <!-- Top Header -->
+    <header class="glass-card bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            ALL SUITES PASS (100%)
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Đợt đánh giá: Review 2</span>
+        </div>
+        <h1 class="text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
+          <i class="fa-solid fa-clipboard-check text-indigo-400"></i>
+          Báo Cáo Kiểm Thử Chất Lượng STEMotion
+        </h1>
+        <p class="text-sm text-slate-400 mt-1">
+          Hệ thống tạo video bài giảng STEM đa phân cảnh Remotion & Quản trị quy trình
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 text-center">
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl px-5 py-3">
+          <div class="text-3xl font-black text-emerald-400">190</div>
+          <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Unit / Integration</div>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl px-5 py-3">
+          <div class="text-3xl font-black text-cyan-400">19</div>
+          <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">E2E Specs (WF)</div>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl px-5 py-3">
+          <div class="text-3xl font-black text-rose-500">0</div>
+          <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Failed Tests</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Status Cards: 3 Lỗi Teammate Báo Cáo -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+        <i class="fa-solid fa-list-check text-indigo-400"></i>
+        Tiến Độ Khắc Phục Các Lỗi Đã Báo Cáo
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Bug 1 -->
+        <div class="bg-slate-800/80 border border-emerald-500/30 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-slate-400 font-mono">LỖI 1 (BE)</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <i class="fa-solid fa-check mr-1"></i>Đã fix triệt để
+            </span>
+          </div>
+          <h3 class="font-bold text-white text-base">Render 500 & Kẹt Trạng Thái</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Sửa lại propagation (<code class="text-indigo-300">REQUIRES_NEW</code>) trong <code class="text-xs bg-slate-900 px-1 py-0.5 rounded">RenderJobRepository</code> và <code class="text-xs bg-slate-900 px-1 py-0.5 rounded">RenderService</code>. Cả 375 test BE đều xanh.
+          </p>
+        </div>
+
+        <!-- Bug 2 -->
+        <div class="bg-slate-800/80 border border-emerald-500/30 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-slate-400 font-mono">LỖI 2 (FE)</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <i class="fa-solid fa-check mr-1"></i>Đã fix triệt để
+            </span>
+          </div>
+          <h3 class="font-bold text-white text-base">Đổi Theme Bị Ghi Đè Khi Tải Nhanh</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Thêm cơ chế khóa <code class="text-indigo-300">themeOverriddenByUser</code> trong <code class="text-xs bg-slate-900 px-1 py-0.5 rounded">ProducerStudio.tsx</code>, chặn kết quả trễ của GET <code class="text-indigo-300">/composition</code> ghi đè lựa chọn của người dùng.
+          </p>
+        </div>
+
+        <!-- Bug 3 -->
+        <div class="bg-slate-800/80 border border-emerald-500/30 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-slate-400 font-mono">LỖI 3 (FE)</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <i class="fa-solid fa-check mr-1"></i>Đã fix triệt để
+            </span>
+          </div>
+          <h3 class="font-bold text-white text-base">PublishModal Không Hiện Rõ Lỗi</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Tích hợp thông báo lỗi nội tuyến (<code class="text-indigo-300">inlineError</code>) với banner màu đỏ và icon cảnh báo trực quan ngay trong popup <code class="text-xs bg-slate-900 px-1 py-0.5 rounded">PublishModal.tsx</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Breakdown Tabs / Tables -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+          <i class="fa-solid fa-vial-circle-check text-indigo-400"></i>
+          Chi Tiết Kết Quả Kiểm Thử (36 Test Files - 190 Passed)
+        </h2>
+        <span class="text-xs text-slate-400 font-mono">Framework: Vitest v5.0.3 + Playwright</span>
+      </div>
+
+      <div class="bg-slate-800/90 border border-slate-700 rounded-2xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase font-mono text-[11px] border-b border-slate-700">
+              <tr>
+                <th class="p-3.5">Workflow / Nhóm Kiểm Thử</th>
+                <th class="p-3.5">Mô tả Test & Nghiệp Vụ</th>
+                <th class="p-3.5">Tổng Test</th>
+                <th class="p-3.5">Thời Gian</th>
+                <th class="p-3.5 text-right">Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60 font-sans">
+              <!-- PublishModal -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-up-from-bracket text-emerald-400"></i>
+                    PublishModal (WF-04)
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Xử lý xuất bản nội bộ LMS, chặn link rác YouTube khi chưa OAuth, hiển thị lỗi nội tuyến khi thất bại</td>
+                <td class="p-3.5 font-mono font-semibold">5 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">421ms</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Producer Studio & Composition -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-palette text-indigo-400"></i>
+                    Producer & Theme Sync (WF-03)
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Đồng bộ bản dựng, chống ghi đè theme màu (Bug 2), quản lý hàng đợi lưu phân cảnh và xử lý xung đột 409</td>
+                <td class="p-3.5 font-mono font-semibold">12 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">680ms</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Render Service & History -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-film text-cyan-400"></i>
+                    Render Hub & Polling (WF-03)
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Theo dõi tiến trình render BullMQ, retry job lỗi, lưu trữ lịch sử kết xuất và tải MP4</td>
+                <td class="p-3.5 font-mono font-semibold">8 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">510ms</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Reviewer Studio & Comments -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-comments text-amber-400"></i>
+                    Review Workflow (WF-02, WF-04)
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Quy trình duyệt kịch bản & video, thêm nhận xét gắn timestamp, thẩm định chất lượng trên Web Player</td>
+                <td class="p-3.5 font-mono font-semibold">9 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">390ms</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Admin Portal & Workspace -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-users-gear text-purple-400"></i>
+                    Team Setup & Auth (WF-01)
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Tạo không gian làm việc đa vai trò (Writer, Reviewer, Producer), kiểm tra quy tắc phân quyền Leader (BR-01, BR-02)</td>
+                <td class="p-3.5 font-mono font-semibold">14 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">1.24s</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Remotion Scientific Contracts -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-atom text-rose-400"></i>
+                    Remotion Scientific Content
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">Kiểm thử hiển thị công thức KaTeX an toàn, mô phỏng cấu trúc phân tử H2O/Carbon, biểu đồ STEM và đồng bộ TTS</td>
+                <td class="p-3.5 font-mono font-semibold">24 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">890ms</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+
+              <!-- Các test case khác -->
+              <tr class="hover:bg-slate-700/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-slate-400"></i>
+                    Các dịch vụ & Tiện ích khác
+                  </div>
+                </td>
+                <td class="p-3.5 text-slate-400">AI script generation, media library, action guard, dialog accessibility, session recovery</td>
+                <td class="p-3.5 font-mono font-semibold">118 tests</td>
+                <td class="p-3.5 font-mono text-slate-400">2.1s</td>
+                <td class="p-3.5 text-right">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Playwright E2E Specs Roadmap -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+        <i class="fa-solid fa-network-wired text-indigo-400"></i>
+        Bản Đồ 19 Test E2E Playwright (WF-01 Đến WF-04)
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-white font-mono text-xs">wf01-team-setup.spec.ts</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">4/4 Tests</span>
+          </div>
+          <p class="text-xs text-slate-400">Tạo workspace đủ 3 vai trò, đổi mật khẩu lần đầu, kiểm tra quyền Leader không được xóa thành viên.</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-white font-mono text-xs">wf02-script.spec.ts</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">4/4 Tests</span>
+          </div>
+          <p class="text-xs text-slate-400">Writer soạn kịch bản, gửi duyệt (IN_REVIEW), Reviewer phê duyệt (APPROVED) hoặc trả về yêu cầu sửa (CHANGE_REQUESTED).</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-white font-mono text-xs">wf03-production.spec.ts</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">5/5 Tests</span>
+          </div>
+          <p class="text-xs text-slate-400">Producer mở bản dựng, chỉnh sửa theme màu, kích hoạt render Remotion MP4 và kiểm tra danh sách lịch sử render.</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-white font-mono text-xs">wf04-review-publish.spec.ts</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">6/6 Tests</span>
+          </div>
+          <p class="text-xs text-slate-400">Reviewer duyệt clip video, Producer mở PublishModal; xác thực thông báo lỗi khi thất bại (Bug 3) & xuất bản LMS thành công.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Summary -->
+    <footer class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 text-center text-xs text-slate-400">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span>Thời gian chạy kiểm thử: <strong class="text-slate-200">02/11/2026</strong></span>
+        <span>Môi trường: <strong class="text-slate-200">Node v24 / Playwright / Vitest / Windows 11</strong></span>
+        <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Sẵn sàng nộp đợt Review 2</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
